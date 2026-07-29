@@ -70,4 +70,3 @@ def print_number(num):
 print_number(int(input('number pls: ')))
 
 
-
