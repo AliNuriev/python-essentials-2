@@ -1,12 +1,3 @@
-# capitalize - First letter is an upper-case
-print('aBcD'.capitalize())
-print(' Alpha'.capitalize())
-print("αβγδ".capitalize(), end = "\n\n")
-
-# centers the string inside a specified width
-print('[' + 'alpha'.center(20) + ']')
-print("[" + "beta".center(12, "*") + ']', end = "\n\n")
-
 # endswith() checks if the given string ends with the specified argument and returns True or False
 if "epsilon".endswith("on"):
     print("yes")
