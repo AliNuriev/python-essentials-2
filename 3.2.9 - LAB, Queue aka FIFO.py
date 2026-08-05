@@ -1,7 +1,6 @@
 class QueueError(IndexError):
     pass
 
-
 class Queue:
     def __init__(self):
         self.queue = []
@@ -17,13 +16,13 @@ class Queue:
         else:
             raise QueueError
 
-
 que = Queue()
 que.put(1)
-que.put("dog")
+que.put('dog')
 que.put(False)
+
 try:
-    for i in range(4):
+    for i in range(3):
         print(que.get())
 except:
-    print("Queue error")
+    print('Queue error')
