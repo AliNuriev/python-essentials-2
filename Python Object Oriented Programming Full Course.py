@@ -53,5 +53,38 @@ print(student1.name, student1.age, Student.class_year, Student.num_students)
 print(student2.name, student2.age, Student.class_year, Student.num_students)
 print(student3.name, student3.age, Student.class_year, Student.num_students)
 
-print(f"My grad class of {Student.class_year} has {Student.num_students} students")
+print(f"My grad class of {Student.class_year} has {Student.num_students} students", end = '\n\n')
+
+# Class INHERITANCE #
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        self.is_alive= True
+
+    def eat(self):
+        print(f"{self.name} is eating")
+
+    def sleep(self):
+        print(f"{self.name} is asleep")
+
+class Dog(Animal):
+    def speak(self):
+        print("WOOF")
+
+class Cat(Animal):
+    def speak(self):
+        print("Meow!")
+
+class Mouse(Animal):
+    pass
+
+dog = Dog('Scooby')
+cat = Cat("Garfield")
+mouse = Mouse("Mickey")
+
+print(dog.name, dog.is_alive)
+dog.eat()
+dog.sleep()
+dog.speak()
 
