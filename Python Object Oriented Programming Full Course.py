@@ -408,3 +408,33 @@ company1.add_employee('Karen', 'Assistant')
 
 for employee in company1.list_employees():
     print(employee)
+
+print(end = '\n\n')
+
+# instance and static methods
+# instance - all used before
+# static - best for utility functions that don't need access to class data.
+#### работает с тем, что в скобках у него. не рабоатет с обьектом
+
+class Employee:
+
+    def __init__(self, name, position):
+        self.name = name
+        self.position = position
+
+    def get_info(self):
+        return f"{self.name} - {self.position}"
+
+    @staticmethod
+    def is_valid_position(position):
+        valid_positions = ['Manager', 'Cashier', 'Cook', 'Janitor']
+        return position in valid_positions
+
+employee1 = Employee('Eugune', 'Manager')
+employee2 = Employee('Squidward', 'Cashier')
+employee3 = Employee('Spongebob', 'Cook')
+
+print(Employee.is_valid_position('Scientist'))
+print(employee1.get_info())
+print(employee2.get_info())
+print(employee3.get_info())
