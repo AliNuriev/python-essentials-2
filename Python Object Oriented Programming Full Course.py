@@ -437,4 +437,48 @@ employee3 = Employee('Spongebob', 'Cook')
 print(Employee.is_valid_position('Scientist'))
 print(employee1.get_info())
 print(employee2.get_info())
-print(employee3.get_info())
+print(employee3.get_info(), end = "\n\n")
+
+# class methods - operations with the class itself, working with class variables
+
+class Students:
+
+    count = 0
+    total_gpa = 0
+
+    def __init__(self, name, gpa):
+        self.name = name
+        self.gpa = gpa
+        Students.count += 1
+        Students.total_gpa += gpa
+
+    # INSTANCE METHOD
+    def get_info(self):
+        return f"{self.name} {self.gpa}"
+
+    # CLASS METHOD
+    @classmethod
+    def get_count(cls):
+        return f"Total number of students: {cls.count}"
+
+    @classmethod
+    def get_avg_gpa(cls):
+        if cls.count == 0:
+            return 0
+        else:
+            return f"{cls.total_gpa/cls.count:.2f} is the Average"
+
+student1 = Students('Ali', 3.68)
+student2 = Students('Ray', 4.00)
+student3 = Students('Nic', 3.21)
+
+print(Students.get_count())
+print(Students.get_avg_gpa())
+
+
+
+
+
+
+
+
