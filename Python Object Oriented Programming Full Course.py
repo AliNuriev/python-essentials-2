@@ -523,7 +523,59 @@ print(book2 + book3)
 print('Crime' in book1)
 print(book1['title'])
 print(book3['author'])
-print(book2['Audio'])
+print(book2['Audio'], end = '\n\n')
+
+# property decorator
+
+class Rectangle:
+    def __init__(self, width, height):
+        self._width = width
+        self._height = height
+
+    # getter читает значение и выдает обработанное
+    @property
+    def width(self):
+        return f'{self._width:.1f}cm'
+
+    @property
+    def height(self):
+        return f'{self._height:.1f}cm'
+
+    # setter получает значение , решает что с ним делать, в этом случае не пропускать негативные значения
+    @width.setter
+    def width(self, new_width):
+        if new_width > 0:
+            self._width = new_width
+        else:
+            print('width must be greater than zero')
+
+    @height.setter
+    def height(self, new_height):
+        if new_height > 0:
+            self._height = new_height
+        else:
+            print('height must be greater than zero')
+
+    @width.deleter
+    def width(self):
+        del self._width
+        print('width has been deleted')
+
+    @height.deleter
+    def height(self):
+        del self._height
+        print('height has been deleted')
+
+rectangle = Rectangle(2, 5)
+
+rectangle.width = -34
+rectangle.height = 6
+
+print(rectangle.width)
+
+
+
+
 
 
 
