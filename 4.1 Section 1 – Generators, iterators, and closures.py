@@ -110,4 +110,62 @@ def fib_gen(n):
             pp, p = p, n
             yield n
 
-print(list(fib_gen(10)))
+print(list(fib_gen(10)), end = "\n\n")
+
+# list comprehensions crap
+
+list_1 = []
+
+for i in range(10):
+    list_1.append(10 ** i)
+
+list_2 = [10**i for i in range(10)]
+
+print(list_1)
+print(list_2,end = "\n\n")
+
+# FOR CONDITION EXPRESSIONS:
+# expression_one if condition else expression_two
+
+the_list = []
+
+for x in range(10):
+    the_list.append(1 if x%2 == 0 else 0)
+
+print(the_list)
+
+the_list1 = [1 if x%2 == 0 else 0 for  x in range(10)]
+print(the_list1, end = "\n\n")
+
+# List comprehensions vs. generators
+
+the_list = [1 if x % 2 == 0 else 0 for x in range(10)]
+# list is created as a whole and exists after execution of the loop
+the_generator = (1 if x % 2 == 0 else 0 for x in range(10))
+# there is no list at all – there are only subsequent values
+# produced by the generator, one by one.
+# генератор выдает только последующие значения - одно за другим
+
+for v in the_list:
+    print(v, end = ' ')
+print()
+print(f"Lenght is: {len(the_list)}")
+
+for v in the_generator:
+    print(v, end = ' ')
+print()
+# значения вычисляются в цикле по одному и нигде не накапливаются
+
+try:
+    print(len(the_generator))
+except Exception as e:
+    print(e)
+
+
+
+
+
+
+
+
+
