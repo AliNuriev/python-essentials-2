@@ -161,11 +161,106 @@ try:
 except Exception as e:
     print(e)
 
+print(end = "\n\n")
+
+# LAMBDA functions
+
+# lambda parameters: expression
+
+two = lambda: 2
+sqr = lambda x: x*x
+pwr = lambda x, y: x ** y
+
+for a in range(-2, 3):
+    print(sqr(a), end = '')
+    print(pwr(a, two()))
+
+print(end = "\n\n")
+
+def print_function(args, fun):
+    for x in args:
+        print('f(', x, ')=', fun(x), sep = '')
+
+def poly(x):
+    return 2 * x**2 - 4 * x + 2
+
+print_function([x for x in range(-2, 3)], poly)
+print_function([x for x in range(-2, 3)], lambda x: 2 * x ** 2- 4 * x + 2)
+
+print(end = "\n\n")
+
+# MAP() function
+
+list_1 = [x for x in range(5)]
+list_2 = list(map(lambda x: 2**x, list_1))
+print(list_1, list_2)
+
+for x in map(lambda x: x * x, list_2):
+    print(x, end= ' ')
+
+print()
+# FILTER() function
+
+from random import seed, randint
+
+seed(1) # разный параметр - разный набор, оставишь 1 - будет первая рандомная комбинация всегда
+
+data = [randint(-10,10) for x in range(5)] # pick 5 random numbers in [-10, 10]
+filtered = list(filter(lambda x:  x % 2 == 0, data))
+
+print(data)
+print(filtered, end = "\n\n")
 
 
+# EVEN - X % 2 == 0
+# ODD - X % 2 == 1
+
+# map - возьми элемент и преобразуй его
+# filter - проверяет каждый элемент исходного списка
+# с помощью функции и оставляет только те элементы,
+# для которых функция вернула True
+
+# CLOSURES
+
+def outer(par):
+    loc = par
+
+    def inner():
+        return loc
+    return inner
+
+var = 1
+fun = outer(var)
+print(fun())
 
 
+def make_closure(par):
+    loc = par
+
+    def power(p):
+        return p ** loc
+    return power
+
+fsqr = make_closure(2)
+fcub = make_closure(3)
+
+for i in range(10):
+    print(i, fsqr(i), fcub(i))
+
+# closure особенно полезен, когда ты хочешь
+# создавать много похожих функций с разными
+# внутренними настройками, не передавая эти настройки каждый раз вручную
 
 
+def discount(dis):
+    def apply(price):
+        return price * (1-dis)
+    return apply
+
+vip_disc = discount(0.4)
+student_disc = discount(0.3)
+
+for i in range(100, 105):
+    print(i, vip_disc(i), student_disc(i))
 
 
