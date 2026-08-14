@@ -1,0 +1,21 @@
+2026-08-01 09:12:03 INFO User alnur logged in
+2026-08-01 09:15:44 INFO Report generated
+2026-08-01 09:31:12 WARNING Disk usage 82%
+2026-08-01 10:02:55 ERROR Database connection failed
+2026-08-01 10:03:01 INFO Retrying connection
+2026-08-01 10:03:09 INFO Connection restored
+2026-08-01 11:47:30 ERROR Timeout on /api/users
+2026-08-01 12:00:00 INFO Daily backup started
+2026-08-01 12:14:22 WARNING Backup took longer than expected
+2026-08-01 12:15:01 INFO Daily backup finished
+2026-08-02 08:03:17 INFO User alnur logged in
+2026-08-02 08:44:09 ERROR Permission denied on /var/data
+2026-08-02 09:10:55 INFO Report generated
+2026-08-02 14:22:38 WARNING Memory usage 91%
+2026-08-02 14:25:00 ERROR Out of memory, process killed
+2026-08-14 19:00:03 INFO Report generated
+2026-08-14 19:00:03 WARNING Disk usage 88%
+2026-08-14 19:00:03 ERROR Connection lost
+2026-08-14 19:00:13 INFO Report generated
+2026-08-14 19:00:13 WARNING Disk usage 88%
+2026-08-14 19:00:13 ERROR Connection lost

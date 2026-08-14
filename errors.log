@@ -1,0 +1,5 @@
+2026-08-01 10:02:55 ERROR Database connection failed
+2026-08-01 11:47:30 ERROR Timeout on /api/users
+2026-08-02 08:44:09 ERROR Permission denied on /var/data
+2026-08-02 14:25:00 ERROR Out of memory, process killed
+2026-08-14 19:00:03 ERROR Connection lost
